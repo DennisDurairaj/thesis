@@ -1,0 +1,300 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.10.18)  18 OCT 2017 16:27
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/Dennis/Documents/dennis/thesis/thesis-docs/thesis.tex
+(c:/Users/Dennis/Documents/dennis/thesis/thesis-docs/thesis.tex
+LaTeX2e <2017-04-15>
+Babel <3.14> and hyphenation patterns for 22 language(s) loaded.
+(c:/texlive/2017/texmf-dist/tex/latex/mwcls/mwrep.cls
+Document Class: mwrep 2017/05/13 v0.75 A LaTeX document class (MW)
+*** Beta version. Formatting may change
+*** in future versions of this class.
+(c:/texlive/2017/texmf-dist/tex/latex/mwcls/mw11.clo
+File: mw11.clo 2017/05/13 v0.75 A document class size option (MW)
+)
+\@parindent=\dimen102
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen103
+)
+(c:/texlive/2017/texmf-dist/tex/latex/listings/listings.sty
+(c:/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\lst@mode=\count88
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count89
+\lst@currlwidth=\dimen104
+\lst@column=\count90
+\lst@pos=\count91
+\lst@lostspace=\dimen105
+\lst@width=\dimen106
+\lst@newlines=\count92
+\lst@lineno=\count93
+\lst@maxwidth=\dimen107
+
+(c:/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count94
+\lst@skipnumbers=\count95
+\lst@framebox=\box27
+)
+(c:/texlive/2017/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen108
+))
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen109
+)
+(c:/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count96
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count97
+\leftroot@=\count98
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count99
+\DOTSCASE@=\count100
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen110
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count101
+\c@MaxMatrixCols=\count102
+\dotsspace@=\muskip10
+\c@parentequation=\count103
+\dspbrk@lvl=\count104
+\tag@help=\toks17
+\row@=\count105
+\column@=\count106
+\maxfields@=\count107
+\andhelp@=\toks18
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(c:/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks21
+\thm@bodyfont=\toks22
+\thm@headfont=\toks23
+\thm@notefont=\toks24
+\thm@headpunct=\toks25
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks26
+)
+(c:/texlive/2017/texmf-dist/tex/latex/psnfss/bookman.sty
+Package: bookman 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(c:/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(c:/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count108
+\Gm@cntv=\count109
+\c@Gm@tempcnt=\count110
+\Gm@bindingoffset=\dimen117
+\Gm@wd@mp=\dimen118
+\Gm@odd@mp=\dimen119
+\Gm@even@mp=\dimen120
+\Gm@layoutwidth=\dimen121
+\Gm@layoutheight=\dimen122
+\Gm@layouthoffset=\dimen123
+\Gm@layoutvoffset=\dimen124
+\Gm@dimlist=\toks27
+)
+(c:/texlive/2017/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(c:/texlive/2017/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)) (./thesis.aux)
+\openout1 = `thesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Try loading font information for T1+pbk on input line 49.
+
+(c:/texlive/2017/texmf-dist/tex/latex/psnfss/t1pbk.fd
+File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
+)
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10.95> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 49.
+\c@lstlisting=\count111
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=441.01773pt
+* \textheight=663.8003pt
+* \oddsidemargin=28.85153pt
+* \evensidemargin=28.85153pt
+* \topmargin=-1.1381pt
+* \headheight=13.6pt
+* \headsep=15.6pt
+* \topskip=11.0pt
+* \footskip=27.20001pt
+* \marginparwidth=42.67912pt
+* \marginparsep=0.0pt
+* \columnsep=25.6802pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <12> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 50.
+LaTeX Font Info:    Try loading font information for U+msa on input line 50.
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 50.
+
+(c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <14.4> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 50.
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <17.28> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 50.
+ [1
+
+{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `T1/pbk/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/pbk/b/n' tried instead on input line 56.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <10.95> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 56.
+LaTeX Font Info:    Font shape `T1/pbk/bx/it' in size <10.95> not available
+(Font)              Font shape `T1/pbk/b/it' tried instead on input line 56.
+LaTeX Font Info:    Font shape `T1/pbk/b/it' in size <10.95> not available
+(Font)              Font shape `T1/pbk/db/it' tried instead on input line 56.
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 58.
+LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <10> not available
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 58.
+ [1]
+LaTeX Font Info:    Font shape `T1/pbk/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/pbk/b/n' tried instead on input line 61.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <17.28> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 61.
+
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/pbk/bx/n' in size <12> not available
+(Font)              Font shape `T1/pbk/b/n' tried instead on input line 71.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <12> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 71.
+[1
+
+]
+LaTeX Font Info:    Font shape `T1/pbk/bx/it' in size <10> not available
+(Font)              Font shape `T1/pbk/b/it' tried instead on input line 83.
+LaTeX Font Info:    Font shape `T1/pbk/b/it' in size <10> not available
+(Font)              Font shape `T1/pbk/db/it' tried instead on input line 83.
+ [2] [3] (./thesis.aux) ) 
+Here is how much of TeX's memory you used:
+ 3359 strings out of 494432
+ 43748 string characters out of 6168764
+ 105432 words of memory out of 5000000
+ 6691 multiletter control sequences out of 15000+600000
+ 23559 words of font info for 52 fonts, out of 8000000 for 9000
+ 319 hyphenation exceptions out of 8191
+ 32i,7n,32p,1368b,271s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.en
+c}<c:/texlive/2017/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb><c:/texlive/20
+17/texmf-dist/fonts/type1/urw/bookman/ubkdi8a.pfb><c:/texlive/2017/texmf-dist/f
+onts/type1/urw/bookman/ubkl8a.pfb>
+Output written on thesis.pdf (5 pages, 42615 bytes).
+PDF statistics:
+ 33 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
