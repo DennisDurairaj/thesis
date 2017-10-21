@@ -7,12 +7,13 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{bookman}
-
+\usepackage[sort, compress]{cite}
 \usepackage{geometry}
+\usepackage{graphicx}
 % \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
     
-
+\graphicspath{{../images/}}
 \textwidth\paperwidth
 \advance\textwidth -55mm
 \oddsidemargin-0.9in
@@ -52,14 +53,14 @@
 \pagenumbering{gobble}
 \newpage
 
-\paragraph{\textit{Abstract:}}
-
-In the modern world, web applications play an important role for many industries. Large scale and high concurrency are important factors for the new era of web applications. The Web technologies involved in developing these applications play an important role. Many technologies such as PHP, ASP.NET, Node, Python, Ruby etc are available in the market for companies to achieve this goal. PHP has been in the web development industry for many years and a large number of web applications still run on PHP while Node has gained popularity in the last few years. Node has become a popular technology to build data-intensive web applications. To study and analyse the performance of Node and PHP, we use benchmark and scenario tests. The results obtained have some valuable performance data, showing that PHP handles much less requests than Node in a certain time. Results show that Node is lightweight and efficient, which is an idea fit for I/O intensive websites between the two, while PHP is relatively more suitable for small and middle scale applications.
 
 \newpage
 \pagenumbering{arabic}
 
+\subfile{abstract/abstract}
 \subfile{chapter1/chapter1}
 \subfile{chapter2/chapter2}
 
+\bibliographystyle{plplain}
+\bibliography{references}
 \end{document}
