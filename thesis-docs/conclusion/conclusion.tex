@@ -1,0 +1,11 @@
+\documentclass[../thesis.tex]{subfiles}
+\begin{document}
+\chapter{Conclusion}
+On comparing the two performance testing tools, namely JMeter and Loadrunner, we can observe that they yield the similar results as we expected.
+\paragraph{}
+Since Node is event-driven and single threaded, it performs better in situations that involve a lot of I/O operations, however it's performance suffers when we compare it to more cpu-intensive tasks.
+\paragraph{}
+PHP performs well when the number of requests is relatively low, but as the number of requests begins to increase, it's performance drops exponentially.
+\paragraph{}
+.NET uses parallel threads hence it is able to outperform Node and PHP when it comes to CPU intensive tasks.
+\end{document}
