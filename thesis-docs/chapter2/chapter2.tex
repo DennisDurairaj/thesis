@@ -130,7 +130,7 @@ PHP can be used on all major operating systems, including Microsoft Windows, Mac
 \paragraph{}
 So, with PHP, you have the liberty of selecting an operating system and a web server. Furthermore, you also have the choice of using procedural programming or object-orientated programming (OOP), or a combination of them both.
 \paragraph{}
-With PHP, you aren't confined to output HTML. PHP’s power includes outputting pictures, PDF documents or even Flash movies (with the usage of libswf and Ming) generated at the fly. You can additionally output easily any text, together with XHTML and another XML document. PHP can autogenerate these documents, and save them within the system, as opposed to printing it out, forming a server-side cache to your dynamic content material.
+With PHP, you aren't confined to output HTML. PHP's power includes outputting pictures, PDF documents or even Flash movies (with the usage of libswf and Ming) generated at the fly. You can additionally output easily any text, together with XHTML and another XML document. PHP can autogenerate these documents, and save them within the system, as opposed to printing it out, forming a server-side cache to your dynamic content material.
 \paragraph{}
 One of the strongest features in PHP is its support for a huge range of databases. Writing a database-enabled application is pretty easy with the help of one of the database specific languages (e.g. mysql), or using an abstraction layer like PDO, or connect to any database that supports the Open Database Connection standard popular via the ODBC extension. Other databases may additionally utilize cURL or sockets, like CouchDB.
 \paragraph{}
@@ -214,41 +214,71 @@ Below is a generic performance testing process -
 \paragraph{}
 \item \textbf{Analyze, tune and retest} - Consolidate, analyze and share test results. Then fine tune and test again to see if there is an improvement or decrease in performance. Since improvements generally grow smaller with each retest, stop when bottlenecking is caused by the CPU. Then you may have the consider option of increasing CPU power.
 \end{itemize}
-\subsection{LoadRunner}
-LoadRunner is a Performance Testing tool which was pioneered by Mercury in 1999. Loadrunner was later acquired by HP in 2009.
+\subsection{ApacheBench}
+ApacheBench (ab) is a single-threaded command line computer program for measuring the performance of HTTP web servers. Originally designed to test the Apache HTTP Server, it is generic enough to test any web server.
+The ab tool comes bundled with the standard Apache source distribution, and like the Apache web server itself, is free, open source software and distributed under the terms of the Apache License. \cite{ab}
 
-LoadRunner supports various development tools, technologies and communication protocols. In fact this is the only tool in market which supports such large number of protocols to conduct Performance Testing.
-
-LoadRunner is not only pioneer tool in Performance Testing, but it is still market leader in the Performance Testing paradigm. In a recent assessment, LoadRunner has about 85\% market share in Performance Testing industry. 
-Broadly, LoadRunner supports RIA (Rich Internet Applications), Web 2.0 (HTTP/HTML, Ajax, Flex and Silverlight etc.), Mobile, SAP, Oracle, MS SQL Server, Citrix, RTE, Mail and above all, Windows Socket. There is no competitor tool in the market which could offer such wide variety of protocols vested in single tool.
-LoadRunner works on a principal of simulating Virtual Users on the subject application. These Virtual Users, also termed as VUsers, replicate client's requests and expect corresponding response to pass a transaction.
-\subsection*{Architecture}
-\begin{figure}[ht!]
-  \centering
-  \includegraphics[width=120mm]{Loadrunner_architecture.png}
-  \caption{Loadrunner Architecture \label{overflow}}
-\end{figure}
-\begin{itemize}
-  \item \textbf{VUGEN} VUGen or Virtual User Generator is an IDE (Integrated Development Environment) or a rich coding editor. VUGen is used to replicate System Under Load (SUL) behaviour. VUGen provides a "recording" feature which records communication to and from client and Server in form of a coded script - also called VUser script.
-  \paragraph{}
-  \item \textbf{Controller} Once a VUser script is finalized, Controller is the main component which controls the Load simulation by managing, for example:
-    \begin{itemize}
-      \item How many VUsers to simulate against each business process or VUser Group
-      \item Behaviour of VUsers (ramp up, ramp down, simultaneous or concurrent nature etc.)
-      \item Nature of Load scenario e.g. Real Life or Goal Oriented or verifying SLA
-      \item Which injectors to use, how many VUsers against each injector
-      \item Collate results periodically
-      \item IP Spoofing
-      \item Error reporting
-      \item Transaction reporting etc. 
-    \end{itemize}
-    \paragraph{}
-  \item \textbf{Agents Machine/Load Generators/Injectors} LoadRunner Controller is responsible to simulate thousands of VUsers - these VUsers consume hardware resources for example processor and memory - hence putting a limit on the machine which is simulating them. Besides, Controller simulates these VUsers from the same machine (where Controller resides) and hence the results may not be precise. To address this concern, all VUsers are spread across various machines, called Load Generators or Load Injectors.
-  \paragraph{}
-  As a general practice, Controller resides on a different machine and load is simulated from other machines. Depending upon the protocol of VUser scripts and machine specifications, a number of Load Injectors may be required for full simulation. For example, VUsers for an HTTP script will require 2-4MB per VUser for simulation, hence 4 machines with 4 GB RAM each will be required to simulate a load of 10,000 VUsers.
-  \paragraph{}
-  \item \textbf{Analyzer} Once Load scenarios have been executed, the role of "Analysis" component comes in. During the execution, Controller creates a dump of results in raw form and contains information like, which version of LoadRunner created this results dump and what were configurations. All the errors and exceptions are logged in a Microsoft access database, named, output.mdb. The "Analysis" component reads this database file to perform various types of analysis and generates graphs.
-  These graphs show various trends to understand the reasoning behind errors and failure under load; thus help figuring whether optimization is required in SUL, Server (e.g. JBoss, Oracle) or infrastructure.
-\end{itemize}
 \subsection{JMeter}
+jMeter is an Open Source testing software. It is 100\% pure Java application for load and performance testing. jMeter is designed to cover categories of tests like load, functional, performance, regression, etc., and it requires JDK 5 or higher. This tutorial will give you great understanding on jMeter framework needed to test an enterprise level application to deliver it with robustness and reliability. \cite{jmeter}
+\paragraph{}
+JMeter simulates a group of users sending requests to a target server, and returns statistics that show the performance/functionality of the target server/application via tables, graphs, etc.
+\paragraph{}
+\includegraphics[width=150mm]{Jmeter.png} 
+\paragraph{}
+The protocols supported by JMeter are -
+
+\begin{itemize}
+  \item \textbf{Web} - HTTP, HTTPS sites 'web 1.0' web 2.0 (ajax, flex and flex-ws-amf)
+  \paragraph{}
+  \item \textbf{Web Services} - SOAP / XML-RPC
+  \paragraph{}
+  \item \textbf{Directory} - LDAP
+  \paragraph{}
+  \item \textbf{Service} - POP3, IMAP, SMTP
+  \paragraph{}
+  \item Database via JDBC drivers
+  \paragraph{}
+  \item Messaging Oriented service via JMS
+  \paragraph{}
+  \item FTP Service
+\end{itemize}
+
+\subsection*{Features}
+\begin{itemize}
+  \item Being an open source software, it is freely available.
+  \paragraph{}
+  \item It has a simple and intuitive GUI.
+  \paragraph{}
+  \item JMeter can conduct load and performance test for many different server types: Web - HTTP, HTTPS, SOAP, Database via JDBC, LDAP, JMS, Mail - POP3, etc.
+  \paragraph{}
+  \item It is a platform-independent tool. On Linux/Unix, JMeter can be invoked by clicking on JMeter shell script. On Windows, it can be invoked by starting the jmeter.bat file.
+  \paragraph{}
+  \item It has full Swing and lightweight component support (precompiled JAR uses packages javax.swing.* ).
+  \paragraph{}
+  \item JMeter store its test plans in XML format. This means you can generate a test plan using a text editor.
+  \paragraph{}
+  \item Its full multi-threading framework allows concurrent sampling by many threads and simultaneous sampling of different functions by separate thread groups.
+  \paragraph{}
+  \item It is highly extensible.
+  \paragraph{}
+  \item It can also be used to perform automated and functional testing of the applications.
+  \paragraph{}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
