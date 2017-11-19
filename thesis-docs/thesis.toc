@@ -1,0 +1,19 @@
+\select@language {polish}
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Purpose of the project}{2}{subsection.1.1}
+\contentsline {section}{\numberline {2}Technologies and Toolset}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Node}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}PHP}{8}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Python - Django}{10}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Performance Testing}{11}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}ApacheBench}{13}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}JMeter}{14}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Features}{14}{subsection.2.7}
+\contentsline {section}{\numberline {3}Test Methodology}{16}{section.3}
+\contentsline {subsection}{\numberline {3.1}Benchmark Test Methodology}{16}{subsection.3.1}
+\contentsline {paragraph}{}{16}{subsection.3.1}
+\contentsline {paragraph}{}{16}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Phases of benchmark testing}{16}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Testing the web technologies}{17}{subsection.3.3}
+\contentsline {section}{\numberline {4}Conclusion}{19}{section.4}
+\contentsline {section}{Literatura}{20}{section.4}

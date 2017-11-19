@@ -1,9 +1,8 @@
 \documentclass[../thesis.tex]{subfiles}
 \begin{document}
-\chapter{Test Methodology}
+\section{Test Methodology}
 	The experiment evaluates the results of the server by performing benchmark tests. In all the tests, we follow the one-factor-at-a-time experimental design \cite{oaat} to ensure the accuracy and effectiveness of tests.
-	
-\section{Benchmark test}
+
 \subsection{Benchmark Test Methodology}
 Benchmark Testing is a type of testing done to give repeatable set of quantifiable result from which present and future software releases for specific functionality can be baselined or compared. It is a process used to compare the performance of software or hardware system also known as SUT (System Under Test). An SUT can be a Web-based application.
 \paragraph{}
@@ -11,7 +10,7 @@ A benchmark must be repeatable. For instance, with every iteration of load test,
 \paragraph{}
 A benchmark must be quantifiable. For example, user experience cannot be quantified in numbers, but time a user spends on a webpage due to good UI can be quantified.
 
-\subsection{Why benchmark testing is important?}
+\subsection*{Why benchmark testing is important?}
 At business level, benchmark testing can be helpful in determining
 \vspace{5mm}
 \begin{itemize}
@@ -46,31 +45,35 @@ At business level, benchmark testing can be helpful in determining
 	\item Run the process continuously
 \end{itemize}
 
-\section{Testing the web technologies}
+\subsection{Testing the web technologies}
 According to one-factor-at-a-time experimental design, we make three fundamental tests - "Calculate Value of Fibonacci" and "Fetch data from local DB" and "Fetch data from remote DB". "Calculate Value of Fibonacci" module calculates some value of Fibonacci and evaluates the performance under compute-intensive tests. "Select Operation from local DB" module compares different performance through querying some value of DB in an IO-intensive situation. Under all benchmark tests, we keep requests 100. TABLE 1 summarizes the factors in our experiments.
-\paragraph{}
-\begin{table}[h!]
-	\begin{center}
-		\caption{Table with aligned units.}
-		\label{tab:table1}
-		\begin{tabular}{l|S|r} % <-- Changed to S here.
-			1 & 100,200, 400 requests & a\\
-			\hline
-			2 & 10.1 & b\\
-			\hline
-			3 & 23.113231 & c\\
-		\end{tabular}
-	\end{center}
-\end{table}
 
-
-
-
-
-
-
-
-
-
-
+\begin{table}[H]
+	\caption{Benchmark test factors}
+	\centering
+	\footnotesize
+	\label{tab1}
+	\begin{tabular}{!{\color{sapphire}\vrule width 1pt}m{0.22\textwidth}!{\color{black}\vrule width 1pt}m{0.22\textwidth}!{\color{black}\vrule width 1pt}m{0.22\textwidth}!{\color{black}\vrule width 1pt}m{0.22\textwidth}!{\color{sapphire}\vrule width 1pt}}
+		\arrayrulecolor{sapphire}\hline
+		\Centering Requests &
+		\Centering 10, 100, 200, 500, 700, 1000 \\
+		\hline
+		\Centering Benchmark test module & 
+		\Centering Calculate fibonacci, SELECT local DB, remote DB \\
+		\hline
+		\Centering Web technologies tested & 
+		\Centering Node, PHP, Python-Django \\
+		\hline
+		\arrayrulecolor{sapphire}\hline
+	\end{tabular}
+\end{table} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.65\textwidth]{pole_ananasowe.jpg}
+	\captionsetup{justification=raggedleft, font={it, footnotesize}}
+	\caption*{\url{http://vader.joemonster.org/upload/qpm/l_13484426e12385bananasplantage.jpg}} 
+	\captionsetup{justification=justified, font={up, footnotesize}}
+	\caption{Tak wygląda ananasowe pole. Przykład wklejania grafiki rastrowej.}
+	\label{rys1}
+\end{figure}
 \end{document}
