@@ -46,7 +46,7 @@ At business level, benchmark testing can be helpful in determining
 \end{itemize}
 
 \subsection{Testing the web technologies}
-According to one-factor-at-a-time experimental design, we make three fundamental tests - "Calculate Value of Fibonacci" and "Fetch data from local DB" and "Fetch data from remote DB". "Calculate Value of Fibonacci" module calculates some value of Fibonacci and evaluates the performance under compute-intensive tests. "Select Operation from local DB" module compares different performance through querying some value of DB in an IO-intensive situation. Under all benchmark tests, we keep requests 100. TABLE 1 summarizes the factors in our experiments.
+According to one-factor-at-a-time experimental design, we make three fundamental tests - Calculate Value of Fibonacci and Fetch data from local DB and Fetch data from remote DB. Calculate Value of Fibonacci module calculates some value of Fibonacci and evaluates the performance under compute-intensive tests. Select Operation from local DB module compares different performance through querying some value of DB in an IO-intensive situation. Under all benchmark tests, we keep requests 1000 and vary users from 10 to 1000. TABLE 1 summarizes the factors in our experiments.
 
 \begin{table}[H]
 	\caption{Benchmark test factors}
@@ -67,13 +67,36 @@ According to one-factor-at-a-time experimental design, we make three fundamental
 		\arrayrulecolor{sapphire}\hline
 	\end{tabular}
 \end{table} 
+\lipsum[1-1]
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.65\textwidth]{pole_ananasowe.jpg}
+	\includegraphics[width=1\textwidth]{../images/200requestsFibo.png}
 	\captionsetup{justification=raggedleft, font={it, footnotesize}}
-	\caption*{\url{http://vader.joemonster.org/upload/qpm/l_13484426e12385bananasplantage.jpg}} 
 	\captionsetup{justification=justified, font={up, footnotesize}}
-	\caption{Tak wygląda ananasowe pole. Przykład wklejania grafiki rastrowej.}
+	\caption{Results for Fibonacci module with 200 requests}
+	\label{rys1}
+\end{figure}\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{../images/500requestsFibo.png}
+\captionsetup{justification=raggedleft, font={it, footnotesize}}
+\captionsetup{justification=justified, font={up, footnotesize}}
+\caption{Results for Fibonacci module with 500 requests}
+\label{rys1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{../images/700requestsFibo.png}
+	\captionsetup{justification=raggedleft, font={it, footnotesize}}
+	\captionsetup{justification=justified, font={up, footnotesize}}
+	\caption{Results for Fibonacci module with 700 requests}
+	\label{rys1}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{../images/1000requestsFibo.png}
+	\captionsetup{justification=raggedleft, font={it, footnotesize}}
+	\captionsetup{justification=justified, font={up, footnotesize}}
+	\caption{Results for Fibonacci module with 1000 requests}
 	\label{rys1}
 \end{figure}
 \end{document}
