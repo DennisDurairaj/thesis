@@ -25,13 +25,13 @@ r1000 <- data.frame(Users=rep(c("10","100", "200", "300", "400", "500"), each=3)
 barchart(Request_per_sec ~ Users, groups=Tech, r1000, auto.key = list(columns = 3), xlab="Users", ylab="Req/sec", main="Fibonacci module 1000 requests", par.settings = list(superpose.polygon = list(col=chartColors)))
 
 table200 <- reshape(r200, idvar = "Users",timevar = "Tech", direction = "wide")
-colnames(table1000) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
+colnames(table200) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
 
 table500 <- reshape(r500, idvar = "Users",timevar = "Tech", direction = "wide")
-colnames(table1000) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
+colnames(table500) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
 
 table700 <- reshape(r700, idvar = "Users",timevar = "Tech", direction = "wide")
-colnames(table1000) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
+colnames(table700) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
 
 table1000 <- reshape(r1000, idvar = "Users",timevar = "Tech", direction = "wide")
 colnames(table1000) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
