@@ -15,5 +15,5 @@
 \contentsline {paragraph}{}{16}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Phases of benchmark testing}{16}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Testing the web technologies}{17}{subsection.3.3}
-\contentsline {section}{\numberline {4}Conclusion}{22}{section.4}
-\contentsline {section}{Literatura}{23}{section.4}
+\contentsline {section}{\numberline {4}Conclusion}{26}{section.4}
+\contentsline {section}{Literatura}{27}{section.4}
