@@ -4,67 +4,89 @@
 
 \subsection{Node}
 The official website (www.nodejs.org) defines Node as "a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices [1]."
-\vspace{5mm}
+\linebreak
+
 Regardless, JavaScript is the world's most famous programming languages. If you have done any programming for the web, it's unavoidable. JavaScript, in view of the sheer reach of the web, has satisfied the "compose once, run anywhere" dream that Java had back in the 1990s.  
 Around the season of the Ajax insurgency in 2005, JavaScript went from being a toy language to something individuals wrote genuine and noteworthy projects with. A portion of the eminent firsts were Google Maps and Gmail, yet today there are a large group of web applications from Twitter to Facebook to GitHub.
-\vspace{5mm}
+\linebreak
 
 JavaScript has for some time been the true standard for frontend side web development. While about all frontend code is composed in JavaScript, server-side development is a variety of choices between PHP, Java, and various different technologies. Life as a web engineer would be substantially more straightforward if a single language was utilized all around. Since JavaScript overwhelms in the browser, it bodes well to utilize it on the server too. 
-\vspace{5mm}
+\linebreak
 
 The idea of server-side JavaScript is not a new one. Netscape initially introduced JavaScript into the server world in 1994. Since that time, a lot of projects have endeavoured, and failed, to advance JavaScript as a server-side language. Execution, or scarcity thereof, restricted JavaScript from picking up a genuine a dependable balance in the server space. 
-\vspace{5mm}
+\linebreak
 
 Throughout the years, JavaScript has seen gigantic upgrades in performance. Because of its pertinence in the program, enormous players like Google have contributed a considerable measure of time and cash to make JavaScript as fast as possible. In 2009, Ryan Dahl of Joyent, put the large part of that recently discovered execution to great use on the server when he made the Node.js structure. Dahl assembled Node.js over Google's V8 JavaScript engine. V8 is a similar engine that has given Google Chrome its astounding JavaScript performance, and helped it turn into the most well-known browser on the planet.
 \newpage
 \subsection*{Technical Details}
 \begin{itemize}
     \item \textbf{Threading}
-    \vspace{5mm}
+    \newline
+    
     Node.js works in a single threaded environment, utilizing non-blocking I/O calls, enabling it to support a huge number of simultaneous connections without incurring the cost of thread context switching [17]. The idea of sharing a single thread among every one of the requests that utilization the observer design is for building exceptionally concurrent applications, where any function performing I/O must utilize a callback. With a specific end goal to accommodate the single-threaded event loop, Node.js uses the libuv library that, utilizes a fixed-sized thread pool that is in charge of a portion of the non-blocking async I/O operations [18].
-    \vspace{5mm}
+    \newline
+    
     A drawback of this single-threaded approach is that Node.js does not permit vertical scaling by increasing the amount of CPU cores of the machine it's running on while not using a further module, like cluster, StrongLoop process Manager, or pm2. However, developers can increase the default range of threads within the libuv thread pool; these threads are probably to be distributed across multiple cores by the server software system [19].
-    \vspace{5mm}
+    \newline
+    
     Execution of concurrent tasks in Node.js is handled by a thread pool. the main thread decision functions post tasks to the shared task queue that threads within the thread pool pull and execute. Inherently non-blocking system functions like networking interprets to kernel-side non-blocking sockets, whereas inherently blocking system functions like file I/O run in an exceedingly block method on its own thread When a thread in the thread pool completes a task, it informs the main thread of this, which wakes up and execute the callback. As callbacks are handled synchronously on the main thread, long lasting computations and other CPU-bound tasks will freeze the whole event-loop till completion.
-    \vspace{5mm}
+    \newline
+    
     \item \textbf{V8 Engine}
-    \vspace{5mm}
+    \newline
+    
     V8 is the JavaScript execution engine built for Google Chrome and open-sourced by Google in 2008. Written in C++, V8 compiles JavaScript source code to native machine code instead of interpreting it in real time [18].
-    \vspace{5mm}
+    \newline
+    
     Node.js makes use of libuv to handle asynchronous events. Libuv is an abstraction layer file system and network functionality on each Windows and POSIX-based systems like UNIX operating system, macOS, OSS on NonStop, and Unix.
-    \vspace{5mm}
+    \newline
+    
     The core functionality of Node.js resides in a JavaScript library. The Node.js bindings, written in C++, connect these technologies to each other and to the operating system.
-    \vspace{5mm}
+    \newline
+    
     \item \textbf{Package Management}
-    \vspace{5mm}
+    \newline
+    
     npm is an in-built package manager for the Node.js servers. It is utilized to install Node.js programs from the npm registry, sorting out the installation and administration of third-party Node.js programs. npm isn't to be mistaken for the CommonJS 'require()' statement. It is not utilized to load code; rather, it is utilized to install code and manage dependencies from the command line. The bundles found in the npm registry can extend from basic helper libraries, for example, Lodash to task runners suck as Gulp.
-    \vspace{5mm}
+    \newline
+    
     \item \textbf{Unified API}
-    \vspace{5mm}
+    \newline
+    
     Node.js may be combined with a browser, a database supporting JSON information (such as Postgres, MongoDB, or CouchDB) and JSON for a unified JavaScript development stack. With the difference of what were basically server-side development patterns like MVC, MVP, MVVM, etc., Node.js permits the reuse of the same model and service interface between client-side and server-side.
-    \vspace{5mm}
+    \newline
+    
     \item \textbf{Event Loop}
-    \vspace{5mm}
+    \newline
+    
     Node.js registers itself with the software system so as to be notified once a connection is created, and also the OS can issue a callback. inside the Node.js runtime, every connection could be a small heap allocation. historically, comparatively heavyweight OS processes or threads handled every connection. Node.js uses an event loop for scalability, rather than processes or threads [74]. In distinction to different event-driven servers, Node.js's event loop doesn't need to be known as explicitly. Instead callbacks are outlined, and also the server mechanically enters the event loop at the end of the callback definition. Node.js exits the event loop once there are not any any callbacks to be performed.
-    \vspace{5mm}
+    \newline
+    
     \item \textbf{Non-blocking}
-    \vspace{5mm}
+    \newline
+    
     The question of whether an operation is blocking or non-blocking refers to the fact that it must finish before the next operation begins. Non-blocking operations are said to be asynchronous and blocking operations are said to be synchronous. Node is non-blocking i.e. operations don't have to happen consecutively.
-    \vspace{5mm}
+    \newline
+    
     \item \textbf{Scalability}
-    \vspace{5mm}
+    \newline
+    
     Node.js utilizes a single threaded model with event callbacks. Events encourage the server to react in a non-blocking way and makes the server scalable compared to traditional servers which give restricted access to threads to deal with requests. Node utilizes a single threaded program to provide services to a substantially bigger number of requests than traditional servers like Apache HTTP Server.
-    \vspace{5mm}
+    \newline
+    
     \item \textbf{Memory Management}
-    \vspace{5mm}
+    \newline
+    
     Since Node is single-threaded, that implies that every one of your users will be sharing the same memory allocation. At the end of the day, unlike to in the browser, you must be mindful so as not to store user-specific information in closures where different connections can affect it.
 \end{itemize}
 \subsection*{Middleware}
 Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.  Express provides a thin layer of fundamental web application features, without obscuring Node.js features [17].
-\vspace{5mm}
+\newline
+
 Express is the most prominent framework for Node applications, and it highlights middleware utilizing continuation passing. When you need to run a similar code for conceivably a wide range of routes, the perfect place for that code is likely middleware. 
 Middleware is a function that gets passed the request and response objects, alongside a continuation function to call, called next(). Envision that you need to add a requestId to each request/response pair with the goal that you can follow them back to the individual request when you're troubleshooting or debugging your logs for something.
-\vspace{5mm}
+\newline
+
 You can write some middleware like this:
 \begin{lstlisting}
     require('dotenv').config();
@@ -96,13 +118,17 @@ You can write some middleware like this:
 
 \subsection{PHP}
 PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML [18].
-\vspace{5mm}
+\newline
+
 Instead of lots of commands to output HTML (as seen in C or Perl), PHP pages contain HTML with embedded code that does "something" (in this case, output "Hi, I'm a PHP script!"). The PHP code is enclosed in special start and end processing instructions <?php and ?> that allow you to jump into and out of "PHP mode."
-\vspace{5mm}
+\newline
+    
 What distinguishes PHP from something like client-side JavaScript is that the code is executed on the server, generating HTML which is then sent to the client. The client would receive the results of running that script, but would not know what the underlying code was. You can even configure your web server to process all your HTML files with PHP, and then there's really no way that users can tell what you have up your sleeve [18].
-\vspace{5mm}
+\newline
+
 PHP began as a small open source venture that advanced as an ever-increasing number of people discovered how valuable it was. Rasmus Lerdorf released the primary rendition of PHP back in 1994.
-\vspace{5mm}
+\newline
+    
 \begin{itemize}
   \item PHP is a recursive acronym for "PHP: Hypertext Preprocessor"
   \item PHP is a server-side scripting language that is embedded with HTML. It is utilized to manage dynamic content, session tracking, databases even build whole web based e-commerce websites. 
@@ -111,155 +137,261 @@ PHP began as a small open source venture that advanced as an ever-increasing num
   \item PHP supports countless protocols, for example, POP3, IMAP, and LDAP. PHP included support for Java and distributed object architectures (COM and CORBA), making n-level improvement a plausibility for the first time. 
   \item PHP syntax is C-Like.  
 \end{itemize}
-\vspace{5mm}
+    
 PHP is essentially centred around server-side scripting, so you can do anything some other CGI program can do, for example, gather form information, produce dynamic page content, or send and get cookies. In any case, PHP can do significantly more.
-\vspace{5mm}
+\newline
+    
 There are three main areas where PHP scripts are used -
-\vspace{5mm}
+\newline
+    
 \begin{itemize}
 \item Server-side scripting -  This is the most traditional and fundamental target field for PHP. In order to make this work you require three things: the PHP parser (CGI or server module), a web server and a web browser. You have to run the web server, with an associated PHP installation [19]. You can get to the PHP program output with a web browser, seeing the PHP page through the server. All these can keep running on your home machine if that you are simply experimenting with PHP.
-\vspace{5mm}
+\newline
+    
 \item Command line scripting - You can make a PHP script to run with no server or program. You just need the PHP parser to utilize it in the appropriate way. This kind of use is perfect for scripts consistently executed utilizing cron (on *nix or Linux) or Task Scheduler (on Windows). These scripts can likewise be used for straightforward script processing tasks.
-\vspace{5mm}
+\newline
+    
 \item Writing desktop applications - PHP is presumably not the absolute best language to make a desktop application with a graphical UI, yet if you know PHP exceptionally well, and might want to utilize some advanced PHP includes in your client-side applications you can utilize PHP-GTK to compose such programs. Additionally, you can build cross-platform applications along these lines. PHP-GTK is an expansion to PHP, not accessible in the fundamental distribution.
 \end{itemize}
-\vspace{5mm}
+    
 PHP can be used on all major operating systems, including Microsoft Windows, Mac OS X, Linux, many Unix variants, RISC OS, and probably others. PHP has support for almost all of the web servers today. This includes IIS, Apache, and many others. And this consists of any internet server which could make use of the FastCGI PHP binary, like lighttpd and nginx. PHP works as both a module, or as a CGI processor.
-\vspace{5mm}
+\newline
+    
 So, with PHP, you have the liberty of selecting an operating system and a web server. Furthermore, you also have the choice of using procedural programming or object-orientated programming (OOP), or a combination of them both.
-\vspace{5mm}
+\newline
+    
 With PHP, you aren't confined to output HTML. PHP's power includes outputting pictures, PDF documents or even Flash movies (with the usage of libswf and Ming) generated at the fly. You can additionally output easily any text, together with XHTML and another XML document. PHP can autogenerate these documents, and save them within the system, as opposed to printing it out, forming a server-side cache to your dynamic content material.
-\vspace{5mm}
+\newline
+    
 One of the strongest features in PHP is its support for a huge range of databases. Writing a database-enabled application is pretty easy with the help of one of the database specific languages (e.g. mysql), or using an abstraction layer like PDO, or connect to any database that supports the Open Database Connection standard popular via the ODBC extension. Other databases may additionally utilize cURL or sockets, like CouchDB.
-\vspace{5mm}
+\newline
+    
 PHP also has support for communicating with other services using protocols inclusive of IMAP, HTTP, LDAP, POP3, SNMP, NNTP, COM (on windows) and endless others. You may also open raw network connections and interact using every other protocol. PHP has aid for the WDDX complex information exchange among truly all web programming languages. When it comes to interconnection, PHP has support for instantiation of Java objects and the use of them transparently as PHP objects.
-\vspace{5mm}
+\newline
+    
 PHP has a powerful text processing feature, which incorporates the Perl compatible regular expressions (PCRE), and numerous expansions and functions to parse and get XML records. PHP standardises a large part of the XML augmentations on the strong base of libxml2, and expands the list of capabilities by including SimpleXML, XMLReader and XMLWriter support.
 
 \subsection{Python - Django}
-\vspace{5mm}
+Django is a high level Python Web Framework enabling developers to write clean and pragmatic web applications. Django supports templating, routing, authentication, routing, basic database administation and many other features. Although Django can be used without a database, it comes packed with an object-relational mapper which describes the database layout in simple Python code. Models can be represented in many different ways using the data-model syntax. Django also has a clean and elegant URL scheme and does not put any ambiguities in URLS.
+
+Django is written in the Python programming language. Python is arguably one of the easiest programming languages to read and understand. It uses natural language constructs like paragraph-like layout and indentation along with easy to learn syntax. It makes understanding the structure of the program and flow significantly easy compared to some other programming languages.
+
+Django follows the Model-View-Controller approach. MVC is a design pattern aiming to separate web application into mainly three parts -
+\newline
+    
+\begin{itemize}
+	\item \textbf{Model} - The model provides an interface between the database and containing application data. Django’s Object-Relational Mapping provides the interface to the application database.
+	\newline
+    
+	\item \textbf{View/Template} - The view decides the information that should be presented to the user and also collects the information from the user. It acts as the interface between the client and the server. The template provides display logic and is the interface between the user and your Django application
+	\newline
+    
+	\item \textbf{Controller/View} - The controller manages the business logic for the application by acting as an information broker between the view and the model. The view manages the bulk of the applications data processing, application logic and messaging.
+	\newline
+    
+\end{itemize}
+\begin{center}
+	\includegraphics[scale=0.63]{../images/Django.png}
+\end{center}
+This design philosophy allows developers to - 
+\begin{itemize}
+	\item  Run servers separately for the database, media and applications.
+	\newline
+    
+	\item  Easily have media served from a CDN (Content Delivery Network)
+	\newline
+    
+	\item  Cache content at multiple scopes and levels
+	\newline
+    
+	\item  For large web applications, it enables clustering and load-balancing in order to distribute the website across multiple servers
+    
+\end{itemize}
+Web programming and web design are two very different ideas. For everything but the small prkects, the programming and design is not done by the same person, in many situations it is not even done by the same company. Django's template system makes it clear that Django programmers and websites must be able to work independent from each other. The profit is a plain text scripting language which makes use of tags to provide the presentation logic that decides what content needs to be displayed in the template.
+
+DRY (Don't Repeat Yourself) is a term that often comes up, and it is one of Django's core principles. The DRY principle is evident in how Django makes use of template inheritance and helps reduce repetition and redundant code. Django comes with a large set of in-built tools that can be used out of the box without prior setup requirement. It provides some common, however complex processes in the form of wrappers. Some of these packages include administration, authorization, database specific features, session management, syndication, etc.
+Django provides high security by disallowing code execution inside a webpage. This simple approach provides high security compared to other languages such as Javascript which can be executed within the browser and hence keeps the door open to various kind of vulnerabilities.
+
+
+
+\subsection{.NET}
+    
 .NET Core is a general purpose, modular, cross-platform and open source implementation of the .NET Standard. It contains many of the same APIs as the .NET Framework (but .NET Core is a smaller set) and includes runtime, framework, compiler and tools components that support a variety of operating systems and chip targets. The .NET Core implementation was primarily driven by the ASP.NET Core workloads but also by the need and desire to have a more modern implementation. It can be used in device, cloud and embedded/IoT scenarios. \cite{dotnet}.
-\vspace{5mm}
+\newline
+    
 .NET Core is supported by Microsoft on Windows, macOS and Linux. On Linux, Microsoft primarily supports .NET Core running on Red Hat Enterprise Linux (RHEL) and Debian distribution families. .NET Core currently supports X64 CPUs. On Windows, X86 is also supported. ARM64 and ARM32 are in progress.
-\vspace{5mm}
+\newline
+    
 Here are the main characteristics of .NET Core:
-\vspace{5mm}
+\newline
+    
 \begin{itemize}
   \item \textbf{Cross-platform} - .NET Core provides key functionality to implement the app features you need and reuse this code regardless of your platform target. It currently supports three main operating systems (OS): Windows, Linux and macOS. You can write apps and libraries that run unmodified across supported operating systems. To see the list of supported operating systems, visit .NET Core roadmap.
-  \vspace{5mm}
+  \newline
+    
   \item \textbf{Open source} - .NET Core is one of the many projects under the stewardship of the .NET Foundation and is available on GitHub. Having .NET Core as an open source project promotes a more transparent development process and promotes an active and engaged community.
-  \vspace{5mm}
+  \newline
+    
   \item \textbf{Flexible deployment} - there are two main ways to deploy your app: framework-dependent deployment or self-contained deployment. With framework-dependent deployment, only your app and third-party dependencies are installed and your app depends on a system-wide version of .NET Core to be present. With self-contained deployment, the .NET Core version used to build your application is also deployed along with your app and third-party dependencies and can run side-by-side with other versions. For more information, see .NET Core Application Deployment.
-  \vspace{5mm}
+  \newline
+    
   \item \textbf{Modular} - .NET Core is modular because it's released through NuGet in smaller assembly packages. Rather than one large assembly that contains most of the core functionality, .NET Core is made available as smaller feature-centric packages. This enables a more agile development model for us and allows you to optimize your app to include just the NuGet packages you need. The benefits of a smaller app surface area include tighter security, reduced servicing, improved performance, and decreased costs in a pay-for-what-you-use model.
 \end{itemize}
-\vspace{5mm}
+    
 .NET Core is composed of the following parts:
 \begin{itemize}
 \item A .NET runtime, which provides a type system, assembly loading, a garbage collector, native interop and other basic services.
-\vspace{5mm}
+\newline
+    
 \item A set of framework libraries, which provide primitive data types, app composition types and fundamental utilities.
-\vspace{5mm}
+\newline
+    
 \item A set of SDK tools and language compilers that enable the base developer experience, available in the .NET Core SDK.
-\vspace{5mm}
+\newline
+    
 \item The 'dotnet' app host, which is used to launch .NET Core apps. It selects the runtime and hosts the runtime, provides an assembly loading policy and launches the app. The same host is also used to launch SDK tools in much the same way.
 \end{itemize}
 
-\subsection{Performance Testing}
-Performance Testing is a type of testing to ensure software applications will perform well under their expected workload. Features and Functionality supported by a software system is not the only concern. A software application's performance like its response time, reliability, resource usage and scalability do matter. The goal of Performance Testing is not to find bugs but to eliminate performance bottlenecks.
-\vspace{5mm}
-The focus of Performance Testing is checking a software program's:
-\vspace{5mm}
+\subsection{Database - PostgreSQL}
+PostgreSQL is an object-relational database management system that emphasizes on the principles of extensibility and standards compliance. The primary function is to store data in a secure manner and return the data as response when requests are made to the database from software applications. It is able to handle high workloads that range from small single-machine applications to very large-scale applications for purposes such as data warehousing that have many concurrent users. 
+PostgreSQL requires mininum maintenance because it is very stable. Therefore applications developed on PostgreSQL have low total cost of ownership compared to other database management systems.
+\linebreak
+
+Some of the important features of PostgreSQL are as follows -
+\smallskip
 \begin{itemize}
-\item Speed - Determines whether the application responds quickly
-\vspace{5mm}
-\item Scalability - Determines maximum user load the software application can handle.
-\vspace{5mm}
-\item Stability - Determines if the application is stable under varying loads
+	\item User-defined types
+	\smallskip
+	\item Table inheritance
+	\smallskip
+	\item Sophisticated locking mechanism
+	\smallskip
+	\item Views, rules, subquery
+	\smallskip
+	\item Nested transactions
+	\smallskip
+	\item Asynchronous replication
+	\smallskip
+	\item Foreign key referential integrity
+	\smallskip
+	\item Multi version concurrency control	
 \end{itemize}
-\vspace{5mm}
-Performance testing is popularly called as "Perf Testing" and is a subset of performance engineering. Performance testing is done to provide stakeholders with information about their application regarding speed, stability and scalability. More importantly, performance testing uncovers what needs to be improved before the product goes to market. Without performance testing, software is likely to suffer from issues such as: running slow while several users use it simultaneously, inconsistencies across different operating systems and poor usability. Performance testing will determine whether or not their software meets speed, scalability and stability requirements under expected workloads. Applications sent to market with poor performance metrics due to non existent or poor performance testing are likely to gain a bad reputation and fail to meet expected sales goals. Also, mission critical applications like space launch programs or life saving medical equipments should be performance tested to ensure that they run for a long period of time without deviations.
-\subsection*{Common Performance Problems}
-Most performance problems revolve around speed, response time, load time and poor scalability. Speed is often one of the most important attributes of an application. A slow running application will lose potential users. Performance testing is done to make sure an app runs fast enough to keep a user's attention and interest. Take a look at the following list of common performance problems and notice how speed is a common factor in many of them:
-\vspace{5mm}
+\bigskip
+PostgreSQL is standards compliant. Its implementation of SQL strongly conforms to ANSI-SQL:2008 standard. It supports all subqueries including subselects, it is read-committed and serializes transaction isolation levels.
+The data integrity features included in postgreSQL are primary keys, foreign keys with cascading updates and deletes as well as restrictions, check constraints, not null constraints and unique constraints.
+\bigskip
+Some of the advantages of using PostgreSQL are - 
 \begin{itemize}
-\item Long load time - Load time is normally the initial time it takes an application to start. This should generally be kept to a minimum. While some applications are impossible to make load in under a minute, Load time should be kept under a few seconds if possible.
-\vspace{5mm}
-\item Poor response time - Response time is the time it takes from when a user inputs data into the application until the application outputs a response to that input. Generally this should be very quick. Again if a user has to wait too long, they lose interest.
-\vspace{5mm}
-\item Poor scalability - A software product suffers from poor scalability when it cannot handle the expected number of users or when it does not accommodate a wide enough range of users. Load Testing should be done to be certain the application can handle the anticipated number of users.
-\vspace{5mm}
-\item Bottlenecking - Bottlenecks are obstructions in system which degrade overall system performance. Bottlenecking is when either coding errors or hardware issues cause a decrease of throughput under certain loads. Bottlenecking is often caused by one faulty section of code. The key to fixing a bottlenecking issue is to find the section of code that is causing the slow down and try to fix it there. Bottle necking is generally fixed by either fixing poor running processes or adding additional Hardware. Some common performance bottlenecks are CPU utilization
-Memory utilization, Network utilization, Operating System limitations, Disk usage.
-\end{itemize}
-\subsection*{Performance Testing Process}
-The methodology adopted for performance testing can vary widely but the objective for performance tests remain the same. It can help demonstrate that your software system meets certain pre-defined performance criteria. Or it can help compare performance of two software systems. It can also help identify parts of your software system which degrade its performance.
-\vspace{5mm}
-Below is a generic performance testing process -
-\vspace{5mm} 
-\begin{itemize}
-\item \textbf{Identify your testing environment} - Know your physical test environment, production environment and what testing tools are available. Understand details of the hardware, software and network configurations used during testing before you begin the testing process. It will help testers create more efficient tests.  It will also help identify possible challenges that testers may encounter during the performance testing procedures.
-\vspace{5mm}
-\item \textbf{Identify the performance acceptance criteria} - This includes goals and constraints for throughput, response times and resource allocation.  It is also necessary to identify project success criteria outside of these goals and constraints. Testers should be empowered to set performance criteria and goals because often the project specifications will not include a wide enough variety of performance benchmarks. Sometimes there may be none at all. When possible finding a similar application to compare to is a good way to set performance goals.
-\vspace{5mm}
-\item \textbf{Plan and design performance tests} - Determine how usage is likely to vary amongst end users and identify key scenarios to test for all possible use cases. It is necessary to simulate a variety of end users, plan performance test data and outline what metrics will be gathered.
-\vspace{5mm}
-\item \textbf{Configuring the test environment} - Prepare the testing environment before execution. Also, arrange tools and other resources.
-\vspace{5mm}
-\item \textbf{Implement test design} - Create the performance tests according to your test design.
-\vspace{5mm}
-\item \textbf{Run the tests} - Execute and monitor the tests.
-\vspace{5mm}
-\item \textbf{Analyze, tune and retest} - Consolidate, analyze and share test results. Then fine tune and test again to see if there is an improvement or decrease in performance. Since improvements generally grow smaller with each retest, stop when bottlenecking is caused by the CPU. Then you may have the consider option of increasing CPU power.
+	\item \textbf{Immunity to over-deployment}
+	Over-deployment is a major problem in most proprietary database vendors such as Oracle SQL. But with PostgreSQL, since it has no associated licensing cost for using the software, there are no legal restrictions or compliances to follow.
+	\smallskip
+	\item \textbf{Extensible}
+	The source code for PostgreSQL is open-source. If a database administrator needs to customise or extend PostgreSQL, they are free to do so and require minimum effort with no added costs.
+	\item \textbf{Cross platform}
+	PostgreSQL is available on all the major UNIX operating systems as well as Windows and macOS via the cygwin framework.
+	\item \textbf{Low staffing and maintenance cost}
+	PostgreSQL is designed to have minimum maintenance and tuning requirements as compared to other proprietary databases, while providing all the features, performance and stability.
 \end{itemize}
 \subsection{ApacheBench}
 ApacheBench (ab) is a single-threaded command line computer program for measuring the performance of HTTP web servers. Originally designed to test the Apache HTTP Server, it is generic enough to test any web server.
 The ab tool comes bundled with the standard Apache source distribution, and like the Apache web server itself, is free, open source software and distributed under the terms of the Apache License. \cite{ab}
+Apachebench generates a flood of queries to the specified URL and returns a variety of metrics. These metrics can be used to compare the performance of various web technologies in our project. Some of the important metrics are requests/second, time per request, and transfer rate. The tool allows testers to load test a URL or server by replicating number of users and number of concurrent requests per second.
 
 \subsection{JMeter}
-jMeter is an Open Source testing software. It is 100\% pure Java application for load and performance testing. jMeter is designed to cover categories of tests like load, functional, performance, regression, etc., and it requires JDK 5 or higher. This tutorial will give you great understanding on jMeter framework needed to test an enterprise level application to deliver it with robustness and reliability. \cite{jmeter}
-\vspace{5mm}
+JMeter is an Open Source testing software. It is 100\% pure Java application for load and performance testing. jMeter is designed to cover categories of tests like load, functional, performance, regression, etc., and it requires JDK 5 or higher. This tutorial will give you great understanding on jMeter framework needed to test an enterprise level application to deliver it with robustness and reliability. \cite{jmeter}
+\newline
+    
 JMeter simulates a group of users sending requests to a target server, and returns statistics that show the performance/functionality of the target server/application via tables, graphs, etc.
-\vspace{5mm}
+\newline
+    
 %\includegraphics[width=150mm]{Jmeter.png} 
-\vspace{5mm}
+    
 The protocols supported by JMeter are -
 
 \begin{itemize}
-  \item \textbf{Web} - HTTP, HTTPS sites 'web 1.0' web 2.0 (ajax, flex and flex-ws-amf)
-  \vspace{5mm}
-  \item \textbf{Web Services} - SOAP / XML-RPC
-  \vspace{5mm}
-  \item \textbf{Directory} - LDAP
-  \vspace{5mm}
-  \item \textbf{Service} - POP3, IMAP, SMTP
-  \vspace{5mm}
-  \item Database via JDBC drivers
-  \vspace{5mm}
-  \item Messaging Oriented service via JMS
-  \vspace{5mm}
-  \item FTP Service
+	\item \textbf{Web} - HTTP, HTTPS sites 'web 1.0' web 2.0 (ajax, flex and flex-ws-amf)
+  
+	\item \textbf{Web Services} - SOAP / XML-RPC
+
+	\item \textbf{Directory} - LDAP
+   
+	\item \textbf{Service} - POP3, IMAP, SMTP
+  
+	\item Database via JDBC drivers
+    
+	\item Messaging Oriented service via JMS
+   
+	\item FTP Service
 \end{itemize}
 
-\subsection{Features}
+\subsection*{Features}
 \begin{itemize}
-  \item Being an open source software, it is freely available.
-  \vspace{5mm}
-  \item It has a simple and intuitive GUI.
-  \vspace{5mm}
-  \item JMeter can conduct load and performance test for many different server types: Web - HTTP, HTTPS, SOAP, Database via JDBC, LDAP, JMS, Mail - POP3, etc.
-  \vspace{5mm}
-  \item It is a platform-independent tool. On Linux/Unix, JMeter can be invoked by clicking on JMeter shell script. On Windows, it can be invoked by starting the jmeter.bat file.
-  \vspace{5mm}
-  \item It has full Swing and lightweight component support (precompiled JAR uses packages javax.swing.* ).
-  \vspace{5mm}
-  \item JMeter store its test plans in XML format. This means you can generate a test plan using a text editor.
-  \vspace{5mm}
-  \item Its full multi-threading framework allows concurrent sampling by many threads and simultaneous sampling of different functions by separate thread groups.
-  \vspace{5mm}
-  \item It is highly extensible.
-  \vspace{5mm}
-  \item It can also be used to perform automated and functional testing of the applications.
-  \vspace{5mm}
+	\item Being an open source software, it is freely available.
+   
+	\item It has a simple and intuitive GUI.
+   
+	\item JMeter can conduct load and performance test for many different server types: Web - HTTP, HTTPS, SOAP, Database via JDBC, LDAP, JMS, Mail - POP3, etc.
+  
+	\item It is a platform-independent tool. On Linux/Unix, JMeter can be invoked by clicking on JMeter shell script. On Windows, it can be invoked by starting the jmeter.bat file.
+    
+	\item It has full Swing and lightweight component support (precompiled JAR uses packages javax.swing.* ).
+   
+	\item JMeter store its test plans in XML format. This means you can generate a test plan using a text editor.
+ 
+	\item Its full multi-threading framework allows concurrent sampling by many threads and simultaneous sampling of different functions by separate thread groups.
+   
+	\item It is highly extensible.
+   
+	\item It can also be used to perform automated and functional testing of the applications.
+    
 \end{itemize}
+
+\subsection{DigitalOcean}
+DigitalOcean is an IaaS (Infrastructure as a Service) company that delivers fast and easy solutions for developers and bsuinesses to deploy their applications on the cloud. It accelerates software development so that the developers and programmers can spend more time working on the feature building and less tiem and focus on managing the infrastructure. 
+\newline
+
+DigitalOcean virtual servers (VPS) also known as "droplets" use KVM (Kernel-based Virtual Machine) as hypervisor and so they can be created in a variety of different sizes. DigitalOcean has their data center in eight different regions around the world, and provides 6 GNU/Linux distributions and dozens of on-click setup applications. DigitalOcean also offers an additional feature of load balancing on their cloud servers. They provide a scalable infrastructure for programmers to build applications with fast development times.
+\newline
+
+DigitalOcean's services are specifically created for all scales of applications, from individual based to enterprise based. They offer serveral different levels of cloud based hosting considering different requirements such as storage capacity, volume needs, and also billed either on a monthly or hourly basis. The more the features, will determite the amount of memory, disk space, transfer limit and core processors provided by the server in your chosen plan.
+\newline
+
+Setting up a DigitalOcean virtual server or "droplet" can be done in under a minute. With each droplet, the developer gets full root access to the server, with the ability to customize the server setup and choose the desired operating system.
+
+All of DigitalsOcean's plans include the following - 
+\begin{itemize}
+	\item Solid state drives (SSD)
+   
+	\item Simple account control panel
+   
+	\item DNS management
+   
+	\item Global image transfer (gives the developers the ability to load droplets in different datacenters)
+  
+	\item Private networking (different droplets belonging to you can communicate with each other with no restrictions on bandwidth limits)  
+\end{itemize}
+\subsection*{Technology and Infrastructure}
+DigitalOcean has a datacenter each in San Francisco, London, Singapore and three each in Amsterdam and New York. The datacenter in Singapore supports IPv6. Cloud servers are build using the KVM virtualization built on Intel's Hex-Core CPUs that have a dedicated ECC RAM and RAID SSD storage. However, the developer can use the control panel or DigitalOcean's name-spaced API to design their own. The control panel also provides a one-click install of common apps such as Linux distributions on the droplets, such as FreeBSD, CentOS, Ubuntu, Drupal or Wordpress.
+Security is one of the most important concerns when it comes to web hosting, but it becomes even more important on cloud hosting. DigitalOcean restricts access to the most critical systems, so the technical staff does not have any access to backend hypervisors, so only the engineering team can access snapshots of the storage systems as well as backups. The datacenters are protected physically by security staff that are working round-the-clock. Biometric readers and two factor authentication are also provided as a safety measure. DigitalOcean promises a 99.99\% uptime, and offers credit if the downtime is below that level.
+
+\subsection*{Features}
+\begin{itemize}
+	\item \textbf{Teams} - This features allows the developers to share resources and accounts between multiple teams and projects. By inviting teams members to streamline a lot of the manual work. The team members can have various roles such as some responsible for managing resources and billing across multiple sites or apps, provide an overview to make sure that all the team members are using the best practices for security, etc.
+	\newline
+    
+	\item \textbf{Block Storage} - Whenever more storage is required, it is easy to extend additional storage to the droplets as per our requirement. The storage blocks are separate from the actual server droplet and have multiple copies that are spreat out throughout the network of servers to make sure that the data is protected in rare situations of hardware failure.
+	\newline
+    
+	\item \textbf{Resilient Network} - By making use of Tier - 1 bandwidth, DigitalOcean's worldwide network is optimized so that it delivers data wherever it has to go, with high speed and high security. It is possible to instantly deploy by using load balancers which improve the reliability of the droplet server.
+	\newline
+    
+	\item \textbf{Spaces} - In addition to block storage, DigitalOcean provides a cloud storage solutions called Spaces. It is used as a store for important data.
+	\newline
+    
+	\item \textbf{One-click Installs} - When setting up a droplet, it is possible to imstall many different types of applications, scripts or CMS systems with just one click instead of logging in to the console and do it all from scratch.
+	\newline
+    
+	
+\end{itemize}
+
 \end{document}
