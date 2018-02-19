@@ -1,10 +1,19 @@
 \documentclass[../thesis.tex]{subfiles}
 \begin{document}
-\section{Conclusion}
-On comparing the two performance testing tools, namely JMeter and Apachebench, we can observe that they yield the similar results for the respective web technologies.
-\vspace{5mm} \\
-Since Node is event-driven and single threaded, it performs better in situations that involve a lot of I/O operations, however it's performance suffers when we compare it to more cpu-intensive such as database calls tasks.
-\vspace{5mm} \\
-PHP performs well when the number of requests is relatively low, but as the number of requests begins to increase, it's performance drops exponentially.
-\vspace{5mm}
+\section{Conclusion and Future Work}
+The research carried out in the project considers the study of performance characteristics of three web technologies, namely Node, PHP and Python-Django. The study was performed with object systematic benchmark tests in two aspects of wbe requests scenarios - CPU intensive task and I/O operation task. The CPU intensive task was to perform the caluclation of a large Fibonacci value and return it to the user. The I/O intensive task involved a query to the database.
+\newline
+
+As per the experiments carried out, the results obtained in the CPU intensive task vs I/O intensive task were quite contrasting. PHP performed very well in CPU intensive tasks when the volume of users was relatively low. However, as the number of users crossed beyond the 300 threshold mark, the PHP server began to bottleneck on both the local and remote machines, while Node and Django managed to perform in a consistent manner as expected with increasing number of users. This suggests that Node and Django are able to handle a higher number of requests before experiencing server bottlenecking like PHP. Further if we compare the performance of Node and Django, Node outperforms Django at the lower user numbers but as the number of users increases the difference between their performances decreases and we see similar results for both the technologies. 
+\newline
+
+In the I/O intensive task of performing a database query, we observe Node performing much better than PHP and Django in all cases of increasing users. This justifies the I/O asynchronous nature of Node which uses callbacks to return to a function when finished so it can continue executing other requests. PHP seems to follow the same pattern as with the CPU intensive task, performing well for low number of users but experiencing failures when the number of users exceeds a threshold. However, in the case of I/O intensive task, PHP's threshold is slightly higher than that to the CPU intensive task. Django however has the lowest performance when it comes to I/O intensive task.
+\newline
+
+Summarizing the research on these three technologies, we conclude with the best use case for each of them as follows -
+\begin{itemize}
+	\item  Node is suitable for applications that have high volume of short message requests that require low computing power, for example real-time applications like livechat, instant-messaging apps etc. will perform well when run on Node compared to the other technologies, since data syncing between the client and server can be achieved very fast. Due to it's asynchronous nature, Node is able to process many requests with low response times.
+	\item PHP being one of the oldest web technologies, still performs well under certain situations. For small-scale applications, PHP would give very good performance since it is able to handle relatively smaller number of requests better.
+	\item Django lies somewhere between Node and PHP when it comes to performance. In all of the tests performed, Django remained consistent with its results across the range of users. Thus Django is built to be robust and with further developement of this relatively new technology we may see improvements in its performance in the future, making it suitable for both CPU intensive and I/O intensive tasks.
+\end{itemize}
 \end{document}

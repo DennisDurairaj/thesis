@@ -64,19 +64,19 @@ tabler200 <- reshape(r200, idvar = "Users",timevar = "Tech", direction = "wide")
 colnames(tabler200) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
 
 tabletpr200 <- reshape(tpr200, idvar = "Users",timevar = "Tech", direction = "wide")
-colnames(tabletpr200) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
+colnames(tabletpr200) <- c("Users", "Node \n time/request", "PHP \n req/sec", "Python \n req/sec")
 
 tablerRemote200 <- reshape(rRemote200, idvar = "Users",timevar = "Tech", direction = "wide")
 colnames(tablerRemote200) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
 
 tabletprRemote200 <- reshape(tprRemote200, idvar = "Users",timevar = "Tech", direction = "wide")
-colnames(tabletprRemote200) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
+colnames(tabletprRemote200) <- c("Users", "Node \n time/request", "PHP \n req/sec", "Python \n req/sec")
 
 tablerDb200 <- reshape(rDb200, idvar = "Users",timevar = "Tech", direction = "wide")
 colnames(tablerDb200) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
 
 tabletprDb200 <- reshape(tprDb200, idvar = "Users",timevar = "Tech", direction = "wide")
-colnames(tabletprDb200) <- c("Users", "Node \n req/sec", "PHP \n req/sec", "Python \n req/sec")
+colnames(tabletprDb200) <- c("Users", "Node \n req/sec", "PHP \n time/request", "Python \n req/sec")
 
 
 

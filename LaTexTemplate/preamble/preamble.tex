@@ -1,7 +1,7 @@
 \documentclass[11pt,a4paper,twoside]{article}
 \usepackage[includeheadfoot, left=3cm, right=2cm, top=2.5cm, bottom=2.5cm, headheight=19.3pt]{geometry}
 
-%\usepackage[polish]{babel}
+\usepackage[polish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[scaled]{helvet}
@@ -15,35 +15,35 @@
 
 \usepackage{url}
 \usepackage{pdfpages}
-\usepackage[bookmarks, pagebackref=false]{hyperref}
+\usepackage[bookmarks, pagebackref]{hyperref}
 \usepackage[none]{hyphenat}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{array}
-\usepackage{subfiles}
 \usepackage{etoolbox, fancyhdr, xcolor}
 \usepackage[hang, flushmargin]{footmisc}
 \usepackage{setspace}
 \usepackage{ragged2e}
+\usepackage{MnSymbol}
 \usepackage[nottoc]{tocbibind}
 \usepackage{titlesec}
 \urlstyle{rm}
 \usepackage[ampersand]{easylist}
 \usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=*, itemindent=-1cm}
 \usepackage{epsfig}
 \usepackage{float}
-\usepackage[font={up, footnotesize}, labelfont=bf, format=hang]{caption}
+\usepackage[font={up, footnotesize}, labelfont=bf, singlelinecheck=off, format=hang]{caption}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{listings}
-\lstset{language=Java, rulecolor=\color{sapphire}, framerule=1.5pt} % you can change language of your code
+\lstset{language=C++, rulecolor=\color{sapphire}, framerule=1.5pt} % you can change language of your code
 \usepackage{colortbl}
 \usepackage{tabu}
 \usepackage{makecell}
-\usepackage{fancyvrb}
+\usepackage{boldline}
 \setlength{\arrayrulewidth}{1pt}
-\renewcommand{\arraystretch}{1.5}
-\captionsetup[table]{name=Table}
+\captionsetup[table]{name=Tabela}
 
 \usepackage{lipsum} % for testing purposes
 
@@ -85,7 +85,7 @@
 {
 	\fancyhf{}
 	\fancyhead[LO]{\Large{\textbf{#1}}}
-	
+
 	\renewcommand{\headrulewidth}{1.5pt}
 	\headrulecolor{sapphire}
 	\justify
@@ -98,7 +98,7 @@
 	\fancyhf{}
 	\fancyhead[RO,LE]{\Large{\textbf{\rightmark}}}
 	\fancyfoot[LE,RO]{\thepage}
-	
+
 	\renewcommand{\headrulewidth}{1.5pt}
 	\renewcommand{\footrulewidth}{1.5pt}
 	\headrulecolor{sapphire}
@@ -112,7 +112,7 @@
 {
 	\fancypagestyle{footnotes}
 	{
-		\fancyfoot[LO,RE]{\parbox{15cm}{\footnotemark[#1]\footnotesize #2}}
+    	\fancyfoot[LO,RE]{\parbox{15cm}{\footnotemark[#1]\footnotesize #2}}
 	}
 	\thispagestyle{footnotes}
 }
@@ -122,7 +122,7 @@
 {
 	\fancypagestyle{footnotes}
 	{
-		\fancyfoot[LO,RE]{\parbox{15cm}{\footnotemark[#1]\footnotesize #2 \\ \footnotemark[#3]\footnotesize #4}}
+    	\fancyfoot[LO,RE]{\parbox{15cm}{\footnotemark[#1]\footnotesize #2 \\ \footnotemark[#3]\footnotesize #4}}
 	}
 	\thispagestyle{footnotes}
 }
@@ -132,7 +132,7 @@
 {
 	\fancypagestyle{footnotes}
 	{
-		\fancyfoot[LO,RE]{\parbox{15cm}{\footnotemark[#1]\footnotesize #2 \\ \footnotemark[#3]\footnotesize #4 \\ \footnotemark[#5]\footnotesize #6 \\}}
+    	\fancyfoot[LO,RE]{\parbox{15cm}{\footnotemark[#1]\footnotesize #2 \\ \footnotemark[#3]\footnotesize #4 \\ \footnotemark[#5]\footnotesize #6 \\}}
 	}
 	\thispagestyle{footnotes}
 }

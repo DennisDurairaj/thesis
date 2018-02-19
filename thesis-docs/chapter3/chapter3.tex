@@ -100,6 +100,44 @@
 	Running on 9000
 	\end{verbatim}
 	Therefore the server is now running and listening to requests on port 9000.
+	\newline
+	
+	Below is the server setup code for the node server - 
+	\begin{Verbatim}
+		import express from "express";
+		import bodyParser from "body-parser";
+		import cors from "cors";
+		
+		const app = express();		
+		app.use(bodyParser.urlencoded({ extended: true }));
+		app.use(bodyParser.json());
+		app.use(cors({ origin: "http://localhost:3000" }));
+		
+		function fibonacci() {
+			var a = 1,
+			b = 0,
+			num = 1400,
+			temp;		
+			while (num >= 0) {
+				temp = a;
+				a = a + b;
+				b = temp;
+				num--;
+			}		
+			return b;
+		}
+		
+		app.get("/api/fibonacci", (req, res) => {
+		var result = fibonacci();
+		var users = req.query.users;
+		}
+		console.log(users);
+		res.status(200).json({ result, users });
+		});
+		
+		app.listen(9000, () => console.log("Running on 9000"));
+		
+	\end{Verbatim}
 	
 	\subsection*{PHP Server}
 	Local PHP servers can be set up relatively easily in comparison to the other two web technologies considered in this project. XAMPP for Windows makes setting up a local server on the machine relatively easy. It provides a WAMP stack (Windows, Apache, MySQL and PHP). The steps involved in setting up a PHP server are as follows -
@@ -133,11 +171,24 @@
 		\end{verbatim}
 		The 'img' folder contains all the static images that are used by the web application, favicon.ico is the icon that is visible on the title bar of the browser when we navigate to the website. index.php is the homepage of the website and is returned when a request is made from the browser.
 	\end{itemize}
-	
+	Below is the server setup code for the PHP server - 
+	\begin{Verbatim}
+		<?php
+		$x = 0;    
+		$y = 1;
+		$num = 1400; 
+		
+		while($num>=0) {    
+			$z = $x + $y;         
+			$x=$y;       
+			$y=$z;
+			$num--;
+		} 
+		echo JSONResponse($x, ($_GET['users']));
+		?>
+	\end{Verbatim}
 	\subsection*{Django Server}
 	Django is extremely versatile in terms of how it can be installed and configured. Django can be: 
-	\newline
-
 	\begin{itemize}
 		\item Installed from source, PyPi (Python Package Index) or by using package manager applications in UNIX operating systems.
 		\smallskip
@@ -281,6 +332,20 @@
 	"name" varchar(255) NOT NULL,
 	);
 	\end{verbatim}
+	Below is the code for the Django server setup - 
+	\begin{Verbatim}
+		from django.http import JsonResponse
+		from decimal import Decimal
+		
+		def index(request):
+			users = request.GET.get('users');
+			a, b = 1, 1
+			result = 'result'
+			for i in range(1400):
+				a, b = b, a + b
+			data = {result: '%.2E' % Decimal(a)}
+			return JsonResponse(data, users)		
+	\end{Verbatim}
 	\subsection{Remote Server Environment}
 	The remote server setup is done using a cloud hosting platform DigitalOcean. As discussed in the previous chapter, DigitalOcean provides it's subscribed clients with virtual private servers (also known as droplets). In this section, each of the remote servers are set up on different virtual private networks located in the same data center in order to minimalize the effect of distance between client and server.
 	\newline
