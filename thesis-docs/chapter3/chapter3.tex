@@ -103,41 +103,41 @@
 	\newline
 	
 	Below is the server setup code for the node server - 
-	\begin{Verbatim}
-		import express from "express";
-		import bodyParser from "body-parser";
-		import cors from "cors";
+	
+\begin{lstlisting}[caption='Fibonacci module code for Node server']
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
 		
-		const app = express();		
-		app.use(bodyParser.urlencoded({ extended: true }));
-		app.use(bodyParser.json());
-		app.use(cors({ origin: "http://localhost:3000" }));
-		
-		function fibonacci() {
-			var a = 1,
-			b = 0,
-			num = 1400,
-			temp;		
-			while (num >= 0) {
-				temp = a;
-				a = a + b;
-				b = temp;
-				num--;
-			}		
-			return b;
-		}
-		
-		app.get("/api/fibonacci", (req, res) => {
-		var result = fibonacci();
-		var users = req.query.users;
-		}
-		console.log(users);
-		res.status(200).json({ result, users });
-		});
-		
-		app.listen(9000, () => console.log("Running on 9000"));
-		
-	\end{Verbatim}
+const app = express();		
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cors({ origin: "http://localhost:3000" }));
+
+function fibonacci() {
+	var a = 1,
+	b = 0,
+	num = 1400,
+	temp;		
+	while (num >= 0) {
+		temp = a;
+		a = a + b;
+		b = temp;
+		num--;
+	}		
+	return b;
+}
+
+app.get("/api/fibonacci", (req, res) => {
+var result = fibonacci();
+var users = req.query.users;
+}
+console.log(users);
+res.status(200).json({ result, users });
+});
+
+app.listen(9000, () => console.log("Running on 9000"));		
+\end{lstlisting}
 	
 	\subsection*{PHP Server}
 	Local PHP servers can be set up relatively easily in comparison to the other two web technologies considered in this project. XAMPP for Windows makes setting up a local server on the machine relatively easy. It provides a WAMP stack (Windows, Apache, MySQL and PHP). The steps involved in setting up a PHP server are as follows -
@@ -172,21 +172,21 @@
 		The 'img' folder contains all the static images that are used by the web application, favicon.ico is the icon that is visible on the title bar of the browser when we navigate to the website. index.php is the homepage of the website and is returned when a request is made from the browser.
 	\end{itemize}
 	Below is the server setup code for the PHP server - 
-	\begin{Verbatim}
-		<?php
-		$x = 0;    
-		$y = 1;
-		$num = 1400; 
-		
-		while($num>=0) {    
-			$z = $x + $y;         
-			$x=$y;       
-			$y=$z;
-			$num--;
-		} 
-		echo JSONResponse($x, ($_GET['users']));
-		?>
-	\end{Verbatim}
+	\begin{lstlisting}[language=PHP, caption=Fibonacci module code for PHP server]
+<?php
+$x = 0;    
+$y = 1;
+$num = 1400; 
+
+while($num>=0) {    
+	$z = $x + $y;         
+	$x=$y;       
+	$y=$z;
+	$num--;
+} 
+echo JSONResponse($x, ($_GET['users']));
+?>
+	\end{lstlisting}
 	\subsection*{Django Server}
 	Django is extremely versatile in terms of how it can be installed and configured. Django can be: 
 	\begin{itemize}
@@ -227,22 +227,22 @@
 	|-manage.py
 	\end{verbatim}
 	The manage.py is the main file through which the server is built. It puts our project's package into the sys.path and also sets the DJANGO\_SETTINGS\_MODULE environment variable to make it point to our project's settings configuration file.
-	\begin{verbatim}
-	#!/usr/bin/env python
-	import os
-	import sys
+	\begin{lstlisting}[language=Python, caption=Django project configuration file]
+#!/usr/bin/env python
+import os
+import sys
+
+if __name__ == "__main__":
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "projectname.settings")
+try:
+from django.core.management import execute_from_command_line
+try:
+import django
+execute_from_command_line(sys.argv)
 	
-	if __name__ == "__main__":
-	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "projectname.settings")
-	try:
-	from django.core.management import execute_from_command_line
-	try:
-	import django
-	execute_from_command_line(sys.argv)
-	
-	\end{verbatim}
+	\end{lstlisting}
 	The projectname/settings.py file contains all the configurations for our server, such as database settings, application specific settings, middleware configurations, template routing, authentication handlers etc. projectname/urls.py manages the routing of the website. The `urlpatterns` list routes URLs to views.
-	\begin{verbatim}
+	\begin{lstlisting}[language=Python, caption=Django project routing configuration]
 	from django.conf.urls import include, url
 	from django.contrib import admin
 	
@@ -252,7 +252,7 @@
 	url(r'^api/fibonacci/', include('fibonacci.urls')),
 	url(r'^api/books/', include('books.urls'))
 	]	
-	\end{verbatim}
+	\end{lstlisting}
 	Different applications can be run on the same server. Django provides separation of each application into it's own environment which is then managed by the main server that sends the correct response as per the incoming requests. To create an application we run the following command in terminal - 
 	\begin{verbatim}
 	python manage.py startapp applicationname
@@ -333,19 +333,19 @@
 	);
 	\end{verbatim}
 	Below is the code for the Django server setup - 
-	\begin{Verbatim}
-		from django.http import JsonResponse
-		from decimal import Decimal
-		
-		def index(request):
-			users = request.GET.get('users');
-			a, b = 1, 1
-			result = 'result'
-			for i in range(1400):
-				a, b = b, a + b
-			data = {result: '%.2E' % Decimal(a)}
-			return JsonResponse(data, users)		
-	\end{Verbatim}
+	\begin{lstlisting}[language=Python, caption=Django server code]
+from django.http import JsonResponse
+from decimal import Decimal
+
+def index(request):
+	users = request.GET.get('users');
+	a, b = 1, 1
+	result = 'result'
+	for i in range(1400):
+		a, b = b, a + b
+	data = {result: '%.2E' % Decimal(a)}
+	return JsonResponse(data, users)		
+	\end{lstlisting}
 	\subsection{Remote Server Environment}
 	The remote server setup is done using a cloud hosting platform DigitalOcean. As discussed in the previous chapter, DigitalOcean provides it's subscribed clients with virtual private servers (also known as droplets). In this section, each of the remote servers are set up on different virtual private networks located in the same data center in order to minimalize the effect of distance between client and server.
 	\newline
@@ -365,10 +365,24 @@
 	Connection to the remote servers is done via SSH in the terminal in the following way -
 	\begin{itemize}
 		\item In the terminal we establish an SSH connection to the remote server through 'root' user which is predefined when the VPS is created
-		\includegraphics[width=1\textwidth]{../images/ssh1.png}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{../images/ssh1.png}
+			\captionsetup{justification=raggedleft, font={it, footnotesize}}
+			\captionsetup{justification=justified, font={up, footnotesize}}
+			\caption{Connecting to remote server via SSH}
+			\label{rys1}
+		\end{figure}
 		\item It will prompt for the password
 		\newline
-		\includegraphics[width=1\textwidth]{../images/ssh2.png}
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{../images/ssh2.png}
+			\captionsetup{justification=raggedleft, font={it, footnotesize}}
+			\captionsetup{justification=justified, font={up, footnotesize}}
+			\caption{Remote server password request}
+			\label{rys1}
+		\end{figure}
 	\end{itemize}
 	On successful login, connection to the remote server will be established and we can configure the server as per our requirements.
 	\subsection*{Transferring files to remote servers}

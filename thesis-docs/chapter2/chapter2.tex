@@ -23,7 +23,7 @@ Throughout the years, JavaScript has seen gigantic upgrades in performance. Beca
     \item \textbf{Threading}
     \newline
     
-    Node.js works in a single threaded environment, utilizing non-blocking I/O calls, enabling it to support a huge number of simultaneous connections without incurring the cost of thread context switching \cite{13}. The idea of sharing a single thread among every one of the requests that utilization the observer design is for building exceptionally concurrent applications, where any function performing I/O must utilize a callback. With a specific end goal to accommodate the single-threaded event loop, Node.js uses the libuv library that, utilizes a fixed-sized thread pool that is in charge of a portion of the non-blocking async I/O operations \cite{14}.
+    Node.js works in a single threaded environment, using non-blocking I/O calls, that enables it to support a large number of concurrent connections without acquiring the cost of thread context switching \cite{13}. The idea of sharing a single thread among every one of the requests that utilization the observer design is for building exceptionally concurrent applications, where any function performing I/O must utilize a callback. With a specific end goal to accommodate the single-threaded event loop, Node.js uses the libuv library that, utilizes a fixed-sized thread pool that is in charge of a portion of the non-blocking async I/O operations \cite{14}.
     \newline
     
     A drawback of this single-threaded approach is that Node.js does not permit vertical scaling by increasing the amount of CPU cores of the machine it's running on while not using a further module, like cluster, StrongLoop process Manager, or pm2. However, developers can increase the default range of threads within the libuv thread pool; these threads are probably to be distributed across multiple cores by the server software system \cite{15}.
@@ -35,7 +35,7 @@ Throughout the years, JavaScript has seen gigantic upgrades in performance. Beca
     \item \textbf{V8 Engine}
     \newline
     
-    V8 is the JavaScript execution engine built for Google Chrome and open-sourced by Google in 2008. Written in C++, V8 compiles JavaScript source code to native machine code instead of interpreting it in real time \cite{14}.
+    V8 is the open-source execution engine for Javascript built by Google in 2008 for Google Chrome. Written in C++, it compiles JavaScript code to native machine code instead of interpreting it in real time \cite{14}.
     \newline
     
     Node.js makes use of libuv to handle asynchronous events. Libuv is an abstraction layer file system and network functionality on each Windows and POSIX-based systems like UNIX operating system, macOS, OSS on NonStop, and Unix.
@@ -53,7 +53,7 @@ Throughout the years, JavaScript has seen gigantic upgrades in performance. Beca
     \item \textbf{Unified API}
     \newline
     
-    Node.js may be combined with a browser, a database supporting JSON information (such as Postgres, MongoDB, or CouchDB) and JSON for a unified JavaScript development stack. With the difference of what were basically server-side development patterns like MVC, MVP, MVVM, etc., Node.js permits the reuse of the same model and service interface between client-side and server-side.
+    Node.js is capable of being combined with a browser or a database which has support for JSON information (such as PostgreSQL or MongoDB) and JSON for full-stack JavaScript development. With the distinction of what is esentially server-side development patterns like MVC, MVVM, etc., Node.js also allows the reuse of the same interface between client-side and server-side.
     \newline
     
     \item \textbf{Event Loop}
@@ -123,18 +123,18 @@ PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used open so
 Instead of lots of commands to output HTML (as seen in C or Perl), PHP pages contain HTML with embedded code that does "something" (in this case, output "Hi, I'm a PHP script!"). The PHP code is enclosed in special start and end processing instructions <?php and ?> that allow you to jump into and out of "PHP mode."
 \newline
     
-What distinguishes PHP from something like client-side JavaScript is that the code is executed on the server, generating HTML which is then sent to the client. The client would receive the results of running that script, but would not know what the underlying code was. You can even configure your web server to process all your HTML files with PHP, and then there's really no way that users can tell what you have up your sleeve \cite{php}.
+What makes PHP stand out from something like client-side JavaScript is that the code is executed on the server, producing HTML which is then sent to the user. The user would receive the response of running that script, but would not know what was the underlying code. You can even configure the web server to process all HTML files using PHP, then there is no chance that users can tell what is happening behind the scenes \cite{php}.
 \newline
 
 PHP began as a small open source venture that advanced as an ever-increasing number of people discovered how valuable it was. Rasmus Lerdorf released the primary rendition of PHP back in 1994.
 \newline
     
 \begin{itemize}
-  \item PHP is a recursive acronym for "PHP: Hypertext Preprocessor"
-  \item PHP is a server-side scripting language that is embedded with HTML. It is utilized to manage dynamic content, session tracking, databases even build whole web based e-commerce websites. 
-  \item It is coordinated with various well-known databases, including MySQL, PostgreSQL, Oracle, Sybase, Informix, and Microsoft SQL Server. 
-  \item PHP is pleasingly fast in its execution, particularly when compiled as an Apache module on the Unix side. The MySQL server, once running, executes even extremely complex queries with tremendous results returned in record-setting time. 
-  \item PHP supports countless protocols, for example, POP3, IMAP, and LDAP. PHP included support for Java and distributed object architectures (COM and CORBA), making n-level improvement a plausibility for the first time. 
+  \item PHP is an acronym for "PHP: Hypertext Preprocessor"
+  \item It supports a large number of protocols, for example, POP3, IMAP, and LDAP. It also includes support for Java and other distributed object architectures (COM and CORBA), making n-level improvement a plausibility for the first time.
+  \item PHP is a server-side web development language that is embedded within HTML. It is used to manage dynamic content, databases even build whole web based e-commerce websites as well as session tracking. 
+  \item PHP is pleasingly fast in its execution, particularly when compiled as an Apache module on the Unix side. The MySQL server, once running, executes even extremely complex queries with tremendous results returned in record-setting time.
+  \item It is coordinated with various well-known databases, including MySQL, PostgreSQL, Oracle, Sybase, Informix, and Microsoft SQL Server.   
   \item PHP syntax is C-Like.  
 \end{itemize}
     
@@ -144,14 +144,14 @@ PHP is essentially centred around server-side scripting, so you can do anything 
 There are three main areas where PHP scripts are used -
   
 \begin{itemize}
-\item Server-side scripting -  This is the most traditional and fundamental target field for PHP. In order to make this work you require three things: the PHP parser (CGI or server module), a web server and a web browser. You have to run the web server, with an associated PHP installation. You can get to the PHP program output with a web browser, seeing the PHP page through the server. All these can keep running on your home machine if that you are simply experimenting with PHP.
+\item Server-side scripting -  This is the most essential and fundamental target field for PHP. In order to make this work, three things are required: the PHP parser (CGI or server module), a web server and a browser. The web server runs on an associated PHP installation. The PHP program output can be viewed with a web browser, seeing the PHP page through the server. All these can keep running on the home machine for the purpose of experimenting with PHP.
   
 \item Command line scripting - You can make a PHP script to run with no server or program. You just need the PHP parser to utilize it in the appropriate way. This kind of use is perfect for scripts consistently executed utilizing cron (on *nix or Linux) or Task Scheduler (on Windows). These scripts can likewise be used for straightforward script processing tasks.
    
 \item Writing desktop applications - PHP is assumed to not be the absolute best language to develop a desktop application with a graphical user interface, yet if you know PHP well, ait is possible to utilize some advanced PHP libraries in the client-side applications to compose such programs. Additionally, you can build cross-platform applications along these lines. PHP-GTK is an expansion to PHP, not accessible in the fundamental distribution.
 \end{itemize}
     
-PHP can be used on all major operating systems, including Microsoft Windows, Mac OS X, Linux, many Unix variants, RISC OS, and probably others. PHP has support for almost all of the web servers today. This includes IIS, Apache, and many others \cite{php}. And this consists of any internet server which could make use of the FastCGI PHP binary, like lighttpd and nginx. PHP works as both a module, or as a CGI processor.
+PHP can be used on the major operating systems, such as Microsoft Windows, Linux, many Unix variants, RISC OS, Mac OS X and many others. PHP supports almost all of the web servers today. Which includes IIS, Apache, and many others \cite{php}. This consists of any internet server which can use the FastCGI PHP binary, like lighttpd and nginx. PHP works as both a module, or as a CGI processor.
 \newline
     
 So, with PHP, you have the liberty of selecting an operating system and a web server. Furthermore, you also have the choice of using procedural programming or object-orientated programming (OOP), or a combination of them both.
@@ -180,16 +180,21 @@ Django follows the Model-View-Controller approach. MVC is a design pattern aimin
 	\item \textbf{Model} - The model provides an interface between the database and containing application data. Django’s Object-Relational Mapping provides the interface to the application database.
 	\newline
     
-	\item \textbf{View/Template} - The view decides the information that should be presented to the user and also collects the information from the user. It acts as the interface between the client and the server. The template provides display logic and is the interface between the user and your Django application
+	\item \textbf{View/Template} - The view decides the information that should be presented to the user and also collects the information from the user. It acts as the interface between the client and the server. The template provides the logic for displaying and acts as the interface between the client and the Django application
 	\newline
     
 	\item \textbf{Controller/View} - The controller manages the business logic for the application by acting as an information broker between the view and the model. The view manages the bulk of the applications data processing, application logic and messaging.
 	\newline
     
 \end{itemize}
-\begin{center}
-	\includegraphics[scale=0.63]{../images/Django.png}
-\end{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{../images/Django.png}
+	\captionsetup{justification=raggedleft, font={it, footnotesize}}
+	\captionsetup{justification=justified, font={up, footnotesize}}
+	\caption{Django design architecture}
+	\label{rys1}
+\end{figure}
 This design philosophy allows developers to - 
 \begin{itemize}
 	\item  Run servers separately for the database, media and applications.
@@ -213,40 +218,37 @@ Django provides high security by disallowing code execution inside a webpage. Th
 
 \subsection{.NET}
     
-.NET Core is a general purpose, modular, cross-platform and open source implementation of the .NET Standard. It contains many of the same APIs as the .NET Framework (but .NET Core is a smaller set) and includes runtime, framework, compiler and tools components that support a variety of operating systems and chip targets. The .NET Core implementation was primarily driven by the ASP.NET Core workloads but also by the need and desire to have a more modern implementation. It can be used in device, cloud and embedded/IoT scenarios. \cite{dotnet}.
+.NET Core is known to be a modular, cross-platform, general-purpose and open source implementation of the .NET Standard. It contains a huge number of APIs similar to the .NET Framework (but .NET Core is a smaller set) and incorporates runtime, architecture, compiler and tools components that support a variety of operating systems and chip targets. The implementation of .NET Core was mainly emphasized by the ASP.NET Core workloads but also by the need to have a more modern architecture of the framework. It can be used in many situations such as in device, cloud and embedded/IoT scenarios. \cite{dotnet}.
 \newline
     
-.NET Core is supported by Microsoft on Windows, macOS and Linux. On Linux, Microsoft primarily supports .NET Core running on Red Hat Enterprise Linux (RHEL) and Debian distribution families. .NET Core currently supports X64 CPUs. On Windows, X86 is also supported. ARM64 and ARM32 are in progress.
+.NET Core is supported on Windows, macOS and Linux. However, on Linux, Microsoft mainly supports .NET Core that runs on Red Hat Enterprise Linux (RHEL) and other Debian distribution families. .NET Core currently only supports X64 CPUs although on Windows, X86 is also supported. Support for ARM64 and ARM32 are in progress.
 \newline
     
 Here are the main characteristics of .NET Core:
 \newline
     
 \begin{itemize}
-  \item \textbf{Cross-platform} - .NET Core provides key functionality to implement the app features you need and reuse this code regardless of your platform target. It currently supports three main operating systems (OS): Windows, Linux and macOS. You can write apps and libraries that run unmodified across supported operating systems. To see the list of supported operating systems, visit .NET Core roadmap.
+  \item \textbf{Cross-platform} - .NET Core comes with key functionality to implement the application features needed by developers and reusability of code regardless of the target platform. The three three major operating systems that are supported are: Windows, Linux and macOS. Applications and libraries can be written without any need for modifications across supported operating systems.
   \newline
     
-  \item \textbf{Open source} - .NET Core is one of the many projects under the stewardship of the .NET Foundation and is available on GitHub. Having .NET Core as an open source project promotes a more transparent development process and promotes an active and engaged community.
+  \item \textbf{Open source} - .NET Core is one of the numerous projects under the ownership of the .NET Foundation and is accessible on GitHub. Being oper source, .NET Core promotes a more straightforward development process and advances a dynamic and engaged community.
   \newline
     
-  \item \textbf{Flexible deployment} - There are two main ways to deploy your app: framework-dependent deployment or self-contained deployment. With framework-dependent deployment, only your app and third-party dependencies are installed and your app depends on a system-wide version of .NET Core to be present. With self-contained deployment, the .NET Core version used to build your application is also deployed along with your app and third-party dependencies and can run side-by-side with other versions. For more information, see .NET Core Application Deployment \cite{dotnet}.
+  \item \textbf{Flexible deployment} - There are two major mothods to deploy a .NET application: the deployment dependant on the framework or a self-contained deployment. With the former, only the application and any third-party libraries are installed and the application depends on a system version of .NET Core to be installed. With the latter however, the version of .NET Core used to compile the application is also deployed with the application along with third-party libraries and can run side-by-side with different versions \cite{dotnet}.
   \newline
     
-  \item \textbf{Modular} - .NET Core is modular because it's released through NuGet in smaller assembly packages. Rather than one large assembly that contains most of the core functionality, .NET Core is made available as smaller feature-centric packages. This enables a more agile development model for us and allows you to optimize your app to include just the NuGet packages you need. The benefits of a smaller app surface area include tighter security, reduced servicing, improved performance, and decreased costs in a pay-for-what-you-use model \cite{dotnet}.
+  \item \textbf{Modular} - .NET Core is considered to have a modular architecture since it is released through NuGet package manager in smaller assembly packages. Rather than one large assembly that contains most of the core functionality, .NET Core is made available as smaller feature-centric packages. Thanks to this, developers are able to work in a more agile development model which allows them to optimize applications to include just the NuGet packages needed. The advantages of a smaller application surface area include tighter security, improved performance, reduced servicing, and low costs in a pay-for-what-you-use model \cite{dotnet}.
 \end{itemize}
     
 .NET Core is composed of the following parts:
 \begin{itemize}
-\item A .NET runtime, which provides a type system, assembly loading, a garbage collector, native interop and other basic services.
-\newline
-    
-\item A set of framework libraries, which provide primitive data types, app composition types and fundamental utilities.
-\newline
-    
-\item A set of SDK tools and language compilers that enable the base developer experience, available in the .NET Core SDK.
-\newline
-    
-\item The 'dotnet' app host, which is used to launch .NET Core apps. It selects the runtime and hosts the runtime, provides an assembly loading policy and launches the app. The same host is also used to launch SDK tools in much the same way.
+\item A .NET runtime environment, that provides a type system, a garbage collector, native interoperability, assembly loading and other services.
+   
+\item A set of libraries, which provide features like primitive data types, fundamental utilities and app composition types.
+   
+\item A set of development tools and language compilers that helps the base developer experience, available in the .NET Core SDK.
+
+\item The 'dotnet' application host, that is used to launch .NET Core appilcations. It hosts the runtime, providing an assembly loading policy to launch the applications. It is also used to launch SDK tools.
 \end{itemize}
 
 \subsection{Database - PostgreSQL}
@@ -273,10 +275,10 @@ Some of the important features of PostgreSQL are as follows -
 	\smallskip
 	\item Multi version concurrency control	
 \end{itemize}
-\bigskip
-PostgreSQL is standards compliant. Its implementation of SQL strongly conforms to ANSI-SQL:2008 standard. It supports all subqueries including subselects, it is read-committed and serializes transaction isolation levels.
-The data integrity features included in postgreSQL are primary keys, foreign keys with cascading updates and deletes as well as restrictions, check constraints, not null constraints and unique constraints.
-\bigskip
+PostgreSQL is compliant to standards. Its implementation of SQL conforms to ANSI-SQL:2008 standard. PostgreSQL supports all subqueries of SQL including subselects, it is also read-committed and serializes transaction isolation levels.
+The data security and integrity features that come with postgreSQL are primary keys, foreign keys with cascading updates and deletes as well as restrictions, check constraints, not null constraints and unique constraints.
+\newline
+
 Some of the advantages of using PostgreSQL are - 
 \begin{itemize}
 	\item \textbf{Immunity to over-deployment}
@@ -295,10 +297,10 @@ The ab tool comes bundled with the standard Apache source distribution, and like
 Apachebench generates a flood of queries to the specified URL and returns a variety of metrics. These metrics can be used to compare the performance of various web technologies in our project. Some of the important metrics are requests/second, time per request, and transfer rate. The tool allows testers to load test a URL or server by replicating number of users and number of concurrent requests per second.
 
 \subsection{JMeter}
-JMeter is an Open Source testing software. It is 100\% pure Java application for load and performance testing. jMeter is designed to cover categories of tests like load, functional, performance, regression, etc., and it requires JDK 5 or higher. This tutorial will give you great understanding on jMeter framework needed to test an enterprise level application to deliver it with robustness and reliability. \cite{jmeter}
+JMeter is an Open Source testing software. It is written purely in Java application for the purpose of performance and load testing. JMeter covers a variety of categories of tests like functional, performance, stress, regression,  etc., and requires JDK 5 or higher to run. \cite{jmeter}
 \newline
     
-JMeter simulates a group of users sending requests to a target server, and returns statistics that show the performance/functionality of the target server/application via tables, graphs, etc.
+JMeter simulates a group of users sending requests to a server, and returns imformation that shows the performance/functionality of the target server/application via tables, graphs, etc.
 \newline
     
 %\includegraphics[width=150mm]{Jmeter.png} 
@@ -323,19 +325,19 @@ The protocols supported by JMeter are -
 
 \subsection*{Features}
 \begin{itemize}
-	\item Being an open source software, it is freely available.
+	\item Being an open source software, JMeter is freely available.
    
-	\item It has a simple and intuitive GUI.
+	\item Simple graphical user interface.
    
-	\item JMeter can conduct load and performance test for many different server types: Web - HTTP, HTTPS, SOAP, Database via JDBC, LDAP, JMS, Mail - POP3, etc.
+	\item JMeter is able to conduct performance tests for a variety of server types: Web - HTTP, HTTPS, Database via JDBC, LDAP, Mail - POP3, etc.
   
-	\item It is a platform-independent tool. On Linux/Unix, JMeter can be invoked by clicking on JMeter shell script. On Windows, it can be invoked by starting the jmeter.bat file.
+	\item It is independent of operating system. JMeter can be invoked by clicking on JMeter shell script on Linux/Unix OS. It can be invoked by starting the jmeter.bat file on the different versions of Windows.
     
-	\item It has full Swing and lightweight component support (precompiled JAR uses packages javax.swing.* ).
+	\item It supports full Swing and lightweight components.
    
-	\item JMeter store its test plans in XML format. This means you can generate a test plan using a text editor.
+	\item JMeter store its results and test plans in XML format. This means that users can generate a test plan using a text editor.
  
-	\item Its full multi-threading framework allows concurrent sampling by many threads and simultaneous sampling of different functions by separate thread groups.
+	\item Its multi-threading framework enables simultaneous sampling by many threads and concurrent sampling of different functions by separate thread groups.
    
 	\item It is highly extensible.
    
@@ -368,7 +370,7 @@ All of DigitalsOcean's plans include the following -
 	\item Private networking (different droplets belonging to you can communicate with each other with no restrictions on bandwidth limits)  
 \end{itemize}
 \subsection*{Technology and Infrastructure}
-DigitalOcean has a datacenter each in San Francisco, London, Singapore and three each in Amsterdam and New York. The datacenter in Singapore supports IPv6. Cloud servers are build using the KVM virtualization built on Intel's Hex-Core CPUs that have a dedicated ECC RAM and RAID SSD storage. However, the developer can use the control panel or DigitalOcean's name-spaced API to design their own. The control panel also provides a one-click install of common apps such as Linux distributions on the droplets, such as FreeBSD, CentOS, Ubuntu, Drupal or Wordpress.
+DigitalOcean has set up its datacenters each in London, Singapore, San Francisco and three each in Amsterdam and New York. The datacenter in Singapore supports IPv6. Cloud servers are deployed using the KVM virtualization build on Intel's Hex-Core CPUs that have a RAID SSD storage and dedicated ECC RAM. However, the developer can use the control panel or DigitalOcean's name-spaced API to design their own. The control panel also provides a one-click install of common apps such as Linux distributions on the droplets, such as FreeBSD, CentOS, Ubuntu, Drupal or Wordpress.
 Security is one of the most important concerns when it comes to web hosting, but it becomes even more important on cloud hosting. DigitalOcean restricts access to the most critical systems, so the technical staff does not have any access to backend hypervisors, so only the engineering team can access snapshots of the storage systems as well as backups. The datacenters are protected physically by security staff that are working round-the-clock. Biometric readers and two factor authentication are also provided as a safety measure. DigitalOcean promises a 99.99\% uptime, and offers credit if the downtime is below that level.
 
 \subsection*{Features}
